@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroHomie | Hydrate!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00C6FB">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Background Waves -->
+        <div class="wave-container">
+            <div id="aquatic-container"></div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+
+        <!-- Bubbles Container -->
+        <div id="bubbles-container"></div>
+
+        <!-- Content Overlay -->
+        <main class="ui-layer">
+            <header>
+                <button id="reset-btn" class="icon-btn" title="Reset Progress">↺</button>
+                <h1 class="fade-in">It's a Hydration Day!</h1>
+                <div class="stats glass-panel shake-on-update">
+                    <div class="stat-item">
+                        <span class="label">Goal</span>
+                        <span class="value">8<small>cups</small></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <span class="label">Drank</span>
+                        <span class="value" id="count-glass">0<small>cups</small></span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <span class="label">Volume</span>
+                        <span class="value" id="current-amount">0<small>ml</small></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="action-area">
+                <button id="drink-btn" class="big-button">
+                    <span class="icon">🥤</span>
+                    <span class="text">1 CUP</span>
+                    <span class="subtext">(250ml)</span>
+                    <div class="liquid-inner"></div>
+                </button>
+            </div>
+
+            <div class="confetti-container"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+
+</html>
